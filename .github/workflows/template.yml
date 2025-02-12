@@ -36,19 +36,15 @@ jobs:
          restore-keys: |
            Library-build-
            Library-
-
-     
            
      - name: Unity Builder
-       uses: game-ci/unity-builder@v2
+       uses: game-ci/unity-builder@v4
        env:
          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
        with:
          targetPlatform: WebGL
-         unityVersion: 2022.3.58f1
-         customImage: unityci/editor:2022.3.58f1-webgl-3
 
      - name: Debug Unity Activation
        run: cat ~/.local/share/unity3d/Unity/Unity.Licensing.Client.log || true
