@@ -36,6 +36,8 @@ jobs:
          restore-keys: |
            Library-build-
            Library-
+
+     
            
      - name: Unity Builder
        uses: game-ci/unity-builder@v2
@@ -48,7 +50,11 @@ jobs:
          unityVersion: 2022.3.58f1
          customImage: unityci/editor:2022.3.58f1-webgl-3
 
-     - uses: actions/upload-artifact@v4
+     - name: Debug Unity Activation
+       run: cat ~/.local/share/unity3d/Unity/Unity.Licensing.Client.log || true
+       
+     - name: Upload Artifact
+       uses: actions/upload-artifact@v4
        with:
          name: build-WebGL
          path: build/WebGL
