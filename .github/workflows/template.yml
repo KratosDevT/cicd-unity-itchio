@@ -82,7 +82,7 @@ jobs:
        env:
          BUTLER_CREDENTIALS: ${{ secrets.ITCH_IO_API_KEY }}
          CHANNEL: HTML
-         ITCH_GAME: BUBBLE-HEIGHT
-         ITCH_USER: KRATOS-DEV-T
+         ITCH_GAME: bubble-height
+         ITCH_USER: KratosDevT
          BRANCH: itch-io
          PACKAGE: build/WebGL
