@@ -48,7 +48,7 @@ jobs:
        with:
          targetPlatform: WebGL
          unityVersion: 2022.3.58f1
-         customImage: unityci/editor:ubuntu-2022.3.58f1-webgl-3.1.0
+         customImage: unityci/editor:ubuntu-6000.0.34f1-webgl-3
 
      - uses: actions/upload-artifact@v4
        with:
@@ -63,7 +63,7 @@ jobs:
      - name: Checkout code
        uses: actions/checkout@v3
 
-     - uses: actions/download-artifact@v2
+     - uses: actions/download-artifact@v4
        with:
          name: build-WebGL
          path: build
